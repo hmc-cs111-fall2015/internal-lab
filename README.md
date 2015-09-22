@@ -124,6 +124,20 @@ challenge: Design and implement a notation for mathematical summations that is a
 expressive as those used in math and is as close as possible to the notation that
 a mathematician would use.
 
+## Bonus: ScalaTest
+Take a look at the 
+[ScalaTest guide](http://www.scalatest.org/user_guide/selecting_a_style), 
+which describes a dizzying array of options for specifying tests. See if you can 
+reverse-engineer their implementation: how are the implementers of ScalaTest 
+providing all these options? Check whether your intuition is correct by browsing
+the ScalaTest 
+[documentation](http://doc.scalatest.org/2.2.4/index.html#org.scalatest.FlatSpec) or
+[source code](https://github.com/scalatest/scalatest/tree/master/scalatest/src/main/scala/org/scalatest).
+
+_Note: ScalaTest is a big library that provides many forms of syntactic sugar 
+for what is essentially the same behavior. As such, there's more software engineering
+in ScalaTest that there is in your implementation of control-flow structures!_
+
 ## Bonus: Baysick
 Try your hand at implementing the syntax for
 [Baysick](https://github.com/fogus/baysick), an internal DSL that mimics the
