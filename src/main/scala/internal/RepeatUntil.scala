@@ -23,10 +23,6 @@ object RepeatUntil extends App {
     new repeat(body)
   }
     
-    
-    
-    
-
   var i = 0
   repeat  {
       if ( (i % 2) == 0 )
