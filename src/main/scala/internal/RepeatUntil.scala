@@ -10,18 +10,28 @@ package internal
  */
 
 object RepeatUntil extends App {
-  
-  def repeat(body: =>Unit, condition: =>Boolean) = {
-    
-    
-    
+  class repeat(body: =>Unit) {
+    def until(condition: =>Boolean) = {
+      body
+      while(!condition){
+        body
+      }
+    }
   }
+  
+  def repeat(body: =>Unit) = {
+    new repeat(body)
+  }
+    
+    
+    
+    
 
   var i = 0
   repeat  {
       if ( (i % 2) == 0 )
           println(i)
       i += 1
-  } until(i > 9)        
+  } until(i > 9)    
 }
 
