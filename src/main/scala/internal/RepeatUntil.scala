@@ -1,4 +1,5 @@
 package internal
+import scala.language.implicitConversions
 
 /**
  * the loop body should execute 10 times and print:
