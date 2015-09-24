@@ -11,7 +11,20 @@ package internal
 
 object WhileContinue extends App {
 
-  // define the new control-flow structures here
+  class WhileContinueException extends Throwable {}
+
+  def continue = {throw new WhileContinueException()}
+
+  def while_c(cond: =>Boolean)(body: =>Unit) = {
+    while (cond) {
+      try {
+        body
+      } catch {
+        case continue_plz: WhileContinueException => {}
+        case e: Throwable => {throw e}
+      }
+    }
+  }
 
   var i = -1
 
@@ -20,6 +33,6 @@ object WhileContinue extends App {
       if ( (i % 2) != 0 )
           continue
       println(i)
-  }        
+  }
 
 }
