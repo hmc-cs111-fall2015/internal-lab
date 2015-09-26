@@ -12,9 +12,6 @@ control-flow structures.
 A more detailed description is below. Here are a few notes about the control-
 flow structures:
 
-  - To maximize the fun, you **should not use any Scala libraries** to implement 
-  your control-flow structures. In other words, to do this lab, you won't
-  need `import` or `extends` (except for `extends App`).
   - When solving a puzzle, reverse-engineer it from the interface (i.e., what
   the user types). Looking at this interface, what kinds of Scala structures
   (e.g., functions and methods) could be used in that way?
