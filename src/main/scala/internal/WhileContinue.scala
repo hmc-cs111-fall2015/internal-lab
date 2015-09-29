@@ -12,6 +12,26 @@ package internal
 object WhileContinue extends App {
 
   // define the new control-flow structures here
+  
+  case class ContinueException() extends Exception {}
+  
+  implicit class while_c(condition: =>Boolean) {
+    
+    def apply(body: =>Any):Unit = {
+      while (condition) {
+        try {
+          body
+        } catch {
+          case x: ContinueException => Nil
+          case x: Exception => throw x
+        }
+      }
+    }
+  }
+  
+  implicit def continue:Unit = {
+    throw new ContinueException()
+  }
 
   var i = -1
 

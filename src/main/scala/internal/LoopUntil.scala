@@ -1,4 +1,6 @@
 package internal
+import scala.language.implicitConversions
+
 
 /**
  * the loop body should execute 10 times and print:
@@ -9,6 +11,15 @@ package internal
  * 8
  */
 object LoopUntil extends App {
+  
+  implicit class loop_until(condition: =>Boolean) {
+    
+    def apply(body: =>Any):Unit = {
+      while (!condition) {
+        body
+      }      
+    }    
+  }
 
   // define the new control-flow structure here
 

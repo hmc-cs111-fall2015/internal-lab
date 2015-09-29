@@ -1,4 +1,5 @@
 package internal
+import scala.language.implicitConversions
 
 /**
  * the loop body should execute 10 times and print:
@@ -12,6 +13,14 @@ package internal
 object RepeatUntil extends App {
   
   // define the new control-flow structure here
+  
+  implicit class repeat(body: =>Any) {
+    def until(condition: =>Boolean):Unit = {
+      while (!condition) {
+        body
+      }
+    }
+  }
 
   var i = 0
   repeat  {
