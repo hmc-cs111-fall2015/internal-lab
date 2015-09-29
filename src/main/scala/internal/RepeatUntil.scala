@@ -13,6 +13,11 @@ object RepeatUntil extends App {
   
   // define the new control-flow structure here
 
+//  def repeat (function: =>Unit) (condition: =>Boolean): Unit = {
+//    
+//  }
+//  val until = (condition: =>Unit) => {condition}
+  
   var i = 0
   repeat  {
       if ( (i % 2) == 0 )
