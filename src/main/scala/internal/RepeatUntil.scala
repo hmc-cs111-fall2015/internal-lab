@@ -10,9 +10,20 @@ package internal
  */
 
 object RepeatUntil extends App {
-  
-  // define the new control-flow structure here
 
+  class Loopable[T] (f: => T) {
+      var current = f
+
+      def until (cond: => Boolean): T = {
+          if (!cond) {
+            this.current = f
+            until(cond)
+	  } else this.current
+      }
+  }
+
+  def repeat[T] (body: => T) = new Loopable(body)
+  
   var i = 0
   repeat  {
       if ( (i % 2) == 0 )
